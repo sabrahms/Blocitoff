@@ -1,0 +1,16 @@
+<h1>Blocitoff Tasks</h1>
+    <section>
+        <ul>
+            <li ng-repeat="task in tasks" ng-hide="task.isComplete || isOlderThanSevenDays(task)">
+                <span>{{task.text}}</span>
+                
+                <!--delete a task -->
+                <button ng-click="tasks.$remove(task)">Delete Task</button>
+                <button ng-click="completeTask(task)">Complete Task</button>
+                
+                </li>
+        </ul>    
+    <!--add a task to array-->
+                <button ng-click="addTask()">Add Task</button>
+                    <input ng-model="newTaskText" />
+    </section>
