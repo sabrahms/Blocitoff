@@ -12,6 +12,12 @@ app.config(function($stateProvider, $locationProvider) {
             controller: "TaskCtrl",
             templateUrl: "/templates/active-tasks.html"
         });
+        .state("completed", {
+            url: "/completed",
+            controller: 
+            templateUrl: "templates/completed-tasks.html"
+            
+        })
 });
 
 //app.factory("tasks", ["$firebaseArray", function($firebaseArray) {
@@ -21,7 +27,8 @@ app.config(function($stateProvider, $locationProvider) {
 //      return $firebase(ref);
 //  }
 //]);
-            
+
+
 
 
 app.controller("TaskCtrl", function($scope, $firebaseArray){
@@ -32,15 +39,35 @@ app.controller("TaskCtrl", function($scope, $firebaseArray){
         
     // add tasks to array
     $scope.addTask = function(task) {
-       $scope.tasks.$add({text: $scope.newTaskText, isComplete: false, createdAt: Date.now()});
+       $scope.tasks.$add({text: $scope.newTaskText});
     };
-    
-    $scope.completeTask = function (task) {
-        task.isComplete = true;
-        $scope.tasks.$save(task);
-    }
-
-    $scope.isOlderThanSevenDays = function (task) {
-        return Date.now() - task.createdAt > 604800000;
-    }
 });  
+
+app.controller("CreateTaskCtrl", ["$scope"])
+
+app.controller("ActiveTaskCtrl", ["$scope", "Task",
+        function($scope, Task) {
+            $scope.tasks = Tasks.getTasks();
+                                  
+}])
+
+app.directive("completedTasks", function (task) {
+    return {
+        templateUrl: "templates/completed-tasks.html",
+        restrict: "E",
+        replace: true,
+        scope: { },
+        link: function(scope, element, attributes) {
+            scope.addTask = function(task) {
+            scope.tasks.$add({isComplete: false, createdAt: Date.now()});
+            scope.completeTask = function(task) {
+                task.isComplete = true;
+            scope.tasks.$save(task);
+        }
+    };
+            scope.isOlderThanSevenDays = function (task) {
+                return Date.now() - task.createdAt > 604800000;
+            }    
+        }
+    };
+});

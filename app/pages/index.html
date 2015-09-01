@@ -15,6 +15,15 @@
     <script src="/js/app.js"></script>
 </head>
 <body id="taskListArea" ng-controller="TaskCtrl">
-    <div ui-view></div>        
+    <ul class="navbar">
+        <li><a ui-sref="active-tasks.html">Active</a></li>
+        <li><a ui-sref="completed-tasks.html">Completed</a></li></ul>
+    <div ui-view></div>   
+    
+    <select ng-model="">
+        <option value="1">Low</option>
+        <option value="2">Medium</option>
+        <option value="3">High</option>
+    </select>    
 </body>
 </html>
