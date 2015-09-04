@@ -1,0 +1,12 @@
+
+  <li ng-repeat="task in tasks" ng-show="shouldShow(task)">
+    <span>{{task.text}}</span>
+    <span>{{task.priority}}</span>
+
+
+<!--delete a task -->
+    <button ng-click="deleteTask(task)">Delete Task</button>
+    <button ng-click="completeTask(task)">Complete Task</button>
+
+  </li>
+</ul>
