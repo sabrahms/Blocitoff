@@ -1,12 +1,18 @@
-<ul>
-  <li ng-repeat="task in tasks" ng-show="shouldShow(task)">
-    <span>{{task.text}}</span>
-    <span>{{task.priority}}</span>
+<div class="center-block">
+    <ul id="tableGrid" class="display:inline-block">
+        <li ng-repeat="task in tasks" ng-show="shouldShow(task)">
+            <button ng-click="deleteTask(task)">Delete Task</button>
+            <button ng-click="completeTask(task)">Complete Task</button>
+            
+            <span>{{task.text}}</span>
+            <span>{{task.priority}}</span>
+            <!--delete a task -->
+
+        </li>
+    </ul>
+</div>    
 
 
-<!--delete a task -->
-    <button ng-click="deleteTask(task)">Delete Task</button>
-    <button ng-click="completeTask(task)">Complete Task</button>
-
-  </li>
-</ul>
+<!--
+            <button ng-click="deleteTask(task)">Delete Task</button>
+            <button ng-click="completeTask(task)">Complete Task</button>-->

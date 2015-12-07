@@ -1,12 +1,17 @@
-<h1>Blocitoff Tasks</h1>
+<h1 style="text-align: center">Blocitoff Tasks</h1>
 <section>
-  <tasklist isactive="true"></tasklist>
-<!--add a task to array-->
-  <button ng-click="addTask()">Add Task</button>
-  <input  ng-model="newTaskText"/>
-    <select name="prioritySelect" ng-model="prioritySelect">
-        <option value="low" selected>Low</option>
-        <option value="medium">Medium</option>
-        <option value="high">High</option>
-    </select>
+    <tasklist isactive="true"></tasklist>
+    <div class="container">
+        <input style="font-size: 35px; color: #000; text-align: center" class="center-block" ng-model="newTaskText"/>
+        <select class="center-block" style="padding: 5px;" name="prioritySelect" ng-model="prioritySelect">
+            <option value="low" selected>Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+    </div>
+    <div class="container center-block">
+        <button class="center-block" ng-click="addTask()">Add Task</button>
+    </div>
 </section>
+
+

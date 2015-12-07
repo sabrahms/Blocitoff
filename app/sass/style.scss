@@ -1,0 +1,60 @@
+* {
+    font-family: sans-serif;
+}
+
+#inputfield {
+    min-height: 30px;
+}
+
+
+#tableGrid li {
+    list-style-type: none;
+}
+
+#taskList {
+    border: 1px solid black;   
+}
+
+h1 {
+    color: #42dca3;
+    font-size: 5em;
+    text-shadow: 1px 1px 0px rgb(255, 255, 255);
+}
+
+
+a {
+    color: black;
+    border: 2px solid black;
+    text-decoration: none;
+    padding: 5px;
+}
+
+a:hover,
+a:focus {
+    color: #42dca3;
+    border: 2px solid #42dca3;
+    text-decoration: none;
+    padding: 5px;
+}
+
+button {
+    color: black;
+    border: 2px solid #000;
+    text-decoration: none;
+    padding: 5px;
+    background: transparent;
+}
+
+button:hover {
+    color: #42dca3;
+    border: 2px solid #42dca3;
+    text-decoration: none;
+    padding: 5px;
+    background: transparent;
+}
+
+
+.container {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}

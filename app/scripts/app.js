@@ -19,13 +19,7 @@ app.config(function($stateProvider, $locationProvider) {
         });
 });
 
-//app.factory("tasks", ["$firebaseArray", function($firebaseArray) {
-//      // create reference to database where data is stored
-//      var ref = new Firebase("https://blistering-heat-6122.firebaseIO.com");
-//
-//      return $firebase(ref);
-//  }
-//]);
+
 
 app.factory("Task", ["$firebaseArray", function ($firebaseArray) {
   var ref = new Firebase("https://blistering-heat-6122.firebaseIO.com/tasks");
