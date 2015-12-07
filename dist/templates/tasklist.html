@@ -1,5 +1,5 @@
 <div class="center-block">
-    <ul id="tableGrid" class="display:inline-block">
+    <ul id="tableGrid">
         <li ng-repeat="task in tasks" ng-show="shouldShow(task)">
             <button ng-click="deleteTask(task)">Delete Task</button>
             <button ng-click="completeTask(task)">Complete Task</button>
